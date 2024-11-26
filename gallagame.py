@@ -32,15 +32,12 @@ def update():
         bullets.append(bullet)
     for bullet in bullets:
         bullet.y=bullet.y-5
-        if bullet.y<0:
-            bullets.remove(bullet)
         if bullet.colliderect(bug):
             bullets.remove(bullet)
             bug.pos=(random.randint(0,800),0)
-
             score=score+5
-
-
+        if bullet.y<0:
+            bullets.remove(bullet)
 
 
 
